@@ -14,8 +14,14 @@ from PIL import Image
 
 from torch.utils.data import Dataset
 from src.config import PATCH_SIZE, SCALE_FACTOR
-from src.utils.image_utils import load_image, random_crop, bicubic_downsample
+from src.utils.image_utils import (
+    load_image,
+    random_crop,
+    bicubic_downsample,
+    bicubic_upsample
+)
 from src.utils.image_utils import image_to_tensor
+
 
 class DIV2KDataset(Dataset):
 
@@ -37,6 +43,8 @@ class DIV2KDataset(Dataset):
         hr_patch = random_crop(image, PATCH_SIZE)
 
         lr_patch = bicubic_downsample(hr_patch, SCALE_FACTOR)
+
+        lr_patch = bicubic_upsample(lr_patch, SCALE_FACTOR)
 
         lr_patch = image_to_tensor(lr_patch)
         hr_patch = image_to_tensor(hr_patch)

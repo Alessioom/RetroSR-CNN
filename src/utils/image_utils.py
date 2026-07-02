@@ -102,3 +102,15 @@ def image_to_tensor(image: Image.Image):
     """
 
     return to_tensor(image)
+
+def bicubic_upsample(image: Image.Image, scale_factor: int) -> Image.Image:
+    """
+    Upsample an image using bicubic interpolation.
+    """
+
+    width, height = image.size
+
+    return image.resize(
+        (width * scale_factor, height * scale_factor),
+        Image.BICUBIC
+    )
