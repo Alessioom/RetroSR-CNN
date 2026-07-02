@@ -1,0 +1,1 @@
+DIV2K è il benchmark più utilizzato nella letteratura per la Single Image Super-Resolution. Contiene immagini naturali ad alta risoluzione, con un'ampia varietà di scene e dettagli, ed è stato utilizzato per addestrare e confrontare numerosi modelli come EDSR, RCAN ed ESPCN.
