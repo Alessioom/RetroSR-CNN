@@ -43,3 +43,8 @@ NUM_WORKERS = 2
 # ==========================================================
 
 SEED = 42
+
+
+# DataLoader
+BATCH_SIZE = 16
+NUM_WORKERS = 0
