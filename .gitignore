@@ -1,0 +1,16 @@
+# Dataset
+data/*
+!data/.gitkeep
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Notebook cache
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Virtual environment
+.venv/
