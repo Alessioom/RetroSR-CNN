@@ -6,6 +6,7 @@ These functions are shared across the entire project.
 
 from PIL import Image
 import random
+import torchvision.transforms as transforms
 from torchvision.transforms import ToTensor
 
 
@@ -114,3 +115,13 @@ def bicubic_upsample(image: Image.Image, scale_factor: int) -> Image.Image:
         (width * scale_factor, height * scale_factor),
         Image.BICUBIC
     )
+
+def tensor_to_image(tensor):
+    """
+    Convert a PyTorch tensor into a PIL image.
+    """
+    print(transforms)
+
+    tensor = tensor.detach().cpu().clamp(0, 1)
+
+    return transforms.ToPILImage()(tensor)
