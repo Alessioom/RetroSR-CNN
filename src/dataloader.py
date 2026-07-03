@@ -4,8 +4,10 @@ Utility functions for creating PyTorch DataLoaders.
 
 from torch.utils.data import DataLoader
 
+
 from src.config import (
     DIV2K_TRAIN_DIR,
+    DIV2K_VALID_DIR,
     BATCH_SIZE,
     NUM_WORKERS
 )
@@ -33,3 +35,19 @@ def get_train_loader():
     )
 
     return train_loader
+
+def get_valid_loader():
+    """
+    Create the DataLoader used during validation.
+    """
+
+    dataset = DIV2KDataset(DIV2K_VALID_DIR)
+
+    valid_loader = DataLoader(
+        dataset,
+        batch_size=BATCH_SIZE,
+        shuffle=False,
+        num_workers=NUM_WORKERS
+    )
+
+    return valid_loader
