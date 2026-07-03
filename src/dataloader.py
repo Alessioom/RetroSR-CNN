@@ -36,18 +36,23 @@ def get_train_loader():
 
     return train_loader
 
-def get_valid_loader():
+def get_validation_loader():
     """
     Create the DataLoader used during validation.
+
+    Returns
+    -------
+    DataLoader
+        PyTorch DataLoader for the DIV2K validation dataset.
     """
 
     dataset = DIV2KDataset(DIV2K_VALID_DIR)
 
-    valid_loader = DataLoader(
+    validation_loader = DataLoader(
         dataset,
         batch_size=BATCH_SIZE,
         shuffle=False,
         num_workers=NUM_WORKERS
     )
 
-    return valid_loader
+    return validation_loader
