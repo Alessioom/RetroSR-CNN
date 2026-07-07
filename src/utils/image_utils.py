@@ -120,8 +120,6 @@ def tensor_to_image(tensor):
     """
     Convert a PyTorch tensor into a PIL image.
     """
-    print(transforms)
-
     tensor = tensor.detach().cpu().clamp(0, 1)
 
     return transforms.ToPILImage()(tensor)
