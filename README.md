@@ -1,1 +1,1 @@
-# RetroSR-CNN
+# Retro gaming graphics deep learning
